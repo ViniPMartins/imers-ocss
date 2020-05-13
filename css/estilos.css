@@ -34,7 +34,7 @@ body {
 }
 
 header {
-    background-image: url('../img/fundo.jpg');
+    background-image: url('../img/Fundo.jpg');
     background-size: 100vw 100vh;
     height: 100vh;
     display: flex;
