@@ -21,7 +21,7 @@ body {
     }
 }
 
-@media (max-width: 400px) {
+@media (max-width: 540px) {
     body {
         font-size: 14px;
     }
@@ -90,21 +90,43 @@ a:hover {
     font-style: italic;
 }
 
-section {
+.portfolio {
     background-color: rgba(16, 23, 58, 0.452);
     text-align: center;
     line-height: 3;
 }
 
-section h2 {
+.portfolio .imagens {
+    display: grid;
+    gap: 2.5em;
+}
+
+@media (min-width: 540px) {
+    .portfolio .imagens {
+        grid-template-columns: 240px 240px;
+        align-content: center;
+        justify-content: center;
+        padding: 20px;
+    }
+}
+
+.portfolio h2 {
     font-size: 35px;
     font-family: monospace;
     font-weight: bold;
 }
 
 .imagens .img-portfolio {
-    width: 40%;
+    width: 240px;
+    height: 135px;
     margin-top: 50px;
+    object-fit: cover;
+    object-position: center;
+}
+
+.imagens .img-portfolio:hover {
+    transform: scale(1.1);
+    transition: 0.6s;
 }
 
 .imagens figcaption {
