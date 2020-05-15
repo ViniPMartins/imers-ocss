@@ -21,7 +21,7 @@ body {
     }
 }
 
-@media (max-width: 540px) {
+@media (max-width: 720px) {
     body {
         font-size: 14px;
     }
@@ -46,6 +46,7 @@ header {
     position: fixed;
     width: 100vw;
     top: 0;
+    z-index: 1;
 }
 
 .menu li {
@@ -63,7 +64,7 @@ header {
     display: block;
 }
 
-a {
+.menu a {
     font-family: monospace;
     font-size: 120%;
     font: bold;
@@ -74,10 +75,22 @@ a {
     border-radius: 10px;
 }
 
-a:hover {
+.menu a:active,
+.menu a:hover {
     font-weight: bold;
     background-color: rgba(39, 79, 170, 0.952);
     transition: 0.6s;
+}
+
+.titulo {
+    opacity: 0;
+    animation: ease-in 1s introtitulo forwards;
+}
+
+@keyframes introtitulo {
+    100% {
+        opacity: 1;
+    }
 }
 
 .site-subtitle,
@@ -90,47 +103,90 @@ a:hover {
     font-style: italic;
 }
 
+.contato,
 .portfolio {
     background-color: rgba(16, 23, 58, 0.452);
     text-align: center;
     line-height: 3;
+    padding: 20px;
 }
 
-.portfolio .imagens {
+.portfolio,
+.imagens {
     display: grid;
     gap: 2.5em;
+    text-align: center;
 }
 
-@media (min-width: 540px) {
+@media (min-width: 1010px) {
     .portfolio .imagens {
-        grid-template-columns: 240px 240px;
+        grid-template-columns: 450px 450px;
         align-content: center;
         justify-content: center;
         padding: 20px;
     }
 }
 
-.portfolio h2 {
-    font-size: 35px;
-    font-family: monospace;
-    font-weight: bold;
+.contato .subtitle,
+.portfolio .subtitle {
+    font-size: 50px;
+    font-family: 'Bebas Neue', cursive;
+    text-align: center;
+}
+
+.portfolio .subtitle {
+    margin-top: 40px;
+    padding-top: 30px;
+}
+
+.contato .subtitle {
+    margin-top: 110px;
+    padding-top: 30px;
+}
+
+.imagens {
+    padding: none;
 }
 
 .imagens .img-portfolio {
-    width: 240px;
-    height: 135px;
-    margin-top: 50px;
+    box-shadow: 2px 2px 10px rgba(16, 23, 58, 0.452);
+    width: 350px;
+    height: 13em;
     object-fit: cover;
     object-position: center;
 }
 
 .imagens .img-portfolio:hover {
-    transform: scale(1.1);
-    transition: 0.6s;
+    transition: transform 0.4s;
+    transform: scale(1.1) rotate(-1.5deg);
 }
 
 .imagens figcaption {
+    text-align: center;
     font-size: 20px;
     font-family: monospace;
     font-weight: bold;
+}
+
+.contato {
+    background-color: whitesmoke;
+}
+
+.contato .icons {
+    padding-top: 0;
+    padding-bottom: 115px;
+    text-align: center;
+}
+
+.contato a {
+    color: black;
+    font-size: 4em;
+    text-decoration: none;
+    padding: 30px;
+}
+
+.contato a:active,
+.contato a:hover {
+    transition: text-shadow 0.4s;
+    text-shadow: 0px 1px 10px rgba(16, 23, 58, 0.452);
 }
